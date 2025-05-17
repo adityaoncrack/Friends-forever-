@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Friendship Celebration</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      background-color: #fff0f5;
+      padding: 50px;
+    }
+    h1 {
+      font-size: 2.8em;
+      color: #d63384;
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-size: 1.8em;
+      color: #555;
+      margin-bottom: 20px;
+    }
+    .quote {
+      font-size: 1.5em;
+      font-style: italic;
+      color: #6c757d;
+      margin-top: 40px;
+    }
+    #timer {
+      font-size: 1.4em;
+      margin-top: 20px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>Celebrating the Friendship of</h1>
+  <h2>Aditya & Sreetama</h2>
+
+  <div id="timer"></div>
+  <div class="quote">"You're always on my mind"</div>
+
+  <!-- Confetti Script -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+    function launchConfetti() {
+      confetti({
+        particleCount: 200,
+        spread: 100,
+        origin: { y: 0.6 }
+      });
+    }
+
+    function updateTimer() {
+      const startDate = new Date("2024-07-13T00:00:00");
+      const now = new Date();
+      const diff = now - startDate;
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("timer").innerText =
+        `Friends for: ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+    }
+
+    window.onload = function() {
+      launchConfetti();
+      updateTimer();
+      setInterval(updateTimer, 1000);
+    };
+  </script>
+</body>
+</html>
