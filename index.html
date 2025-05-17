@@ -72,6 +72,26 @@
       updateTimer();
       setInterval(updateTimer, 1000);
     };
+    <script>
+  const messages = {
+    0: "January: Our friendship began like a spark—now it's a bright flame.",
+    1: "February: Through every up and down, you’ve been my constant.",
+    2: "March: Like spring, you brought new colors into my life.",
+    3: "April: Our laughter echoed like raindrops on a warm day.",
+    4: "May: Blossomed memories and unshakable bonds.",
+    5: "June: Summer talks, late-night thoughts—unforgettable.",
+    6: "July: Fireworks in the sky and in our stories.",
+    7: "August: Holding on to every shared sunset and smile.",
+    8: "September: A calm strength, like the start of fall.",
+    9: "October: Spooky good times and fearless trust.",
+    10: "November: So thankful for every moment with you.",
+    11: "December: Cold days, warm hearts, lasting friendship."
+  };
+
+  const currentMonth = new Date().getMonth(); // 0 = January, 11 = December
+  document.getElementById("friendship-message").textContent = messages[currentMonth];
+</script>
   </script>
+  <div id="friendship-message" style="font-size: 1.2rem; font-weight: bold; margin-top: 20px;"></div>
 </body>
 </html>
